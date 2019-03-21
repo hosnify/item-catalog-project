@@ -39,11 +39,11 @@ you can run this project from your Windows machine directly or from your Virtual
   1. Run this command to install required packages from requirements.txt file:
   
   ```
-    pip3 install -r requirements.txt 
+    pip3 install -r requirements.txt --user
   ```
  OR ( if latest version of python has been installed ) :
   ```
-    pip install -r requirements.txt 
+    pip install -r requirements.txt --user
   ``` 
 #### Creating database and populate it : 
 
@@ -87,11 +87,11 @@ you can run the application from Windows machine directly without the need to us
   1. Run this command to install required packages from requirements.txt file:
   
   ```
-    pip3 install -r requirements.txt 
+    pip3 install -r requirements.txt --user
   ```
 OR ( if latest version of python has been installed ) :
   ```
-    pip install -r requirements.txt 
+    pip install -r requirements.txt --user
   ``` 
 #### Creating database and populate it : 
 
