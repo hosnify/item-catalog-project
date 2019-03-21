@@ -1,6 +1,3 @@
-
-#from datetime import datetime
-#import os
 from flask import render_template , flash , redirect , url_for , request ,Blueprint , jsonify 
 from project2 import db
 from project2.categories.forms import CategoryForm
