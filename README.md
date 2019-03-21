@@ -2,7 +2,6 @@
 
 ## Project Overview
 This the second project on Udacity's Full Stack Web Developer Nanodegree. 
-catalog app is a simple 
 ## How to Run ?
 you can run this project from your Windows machine directly or from your Virtual Machine
 
@@ -16,9 +15,9 @@ you can run this project from your Windows machine directly or from your Virtual
 #### Setup Project:
   1. Install Vagrant and VirtualBox after dowload it From the links above
   2. Download or Clone [fullstack-nanodegree-vm](https://github.com/udacity/fullstack-nanodegree-vm) repository.
-  3. Download or Clone [our catalog app](https://github.com/udacity/fullstack-nanodegree-vm) repository.
+  3. Download or Clone [our catalog app](https://github.com/abousamraa/item-catalog-project.git) repository.
   4. navigate into the vagrant folder in fullstack-nanodegree-vm folder ,  (which is shared with your virtual machine)
-  5. Put our catalog app repository into the vagrant directory .
+  5. Put our catalog app files into the vagrant directory .
   
 #### Launch your Virtual Machine:
   1. open your terminal ( such as git bash ) , then navigate into the vagrant folder in fullstack-nanodegree-vm folder , then run this command   
@@ -48,7 +47,7 @@ you can run this project from your Windows machine directly or from your Virtual
   ``` 
 #### Creating database and populate it : 
 
-  1. Create database file and populate it with some data for testing by running :
+  1. Create database file and populate it with some data for testing  :
   
   ```
     python3 db_populate.py 
@@ -56,6 +55,7 @@ you can run this project from your Windows machine directly or from your Virtual
  2. for testing , all categories and courses in this database created by this user data : 
 
 > email : admin@test.com
+
 > password = 'password'
 
 #### Run server  : 
@@ -65,6 +65,10 @@ you can run this project from your Windows machine directly or from your Virtual
   ```
     python3 runserver.py 
   ```
+   OR ( if latest version of python has been installed ) :
+  ```
+    python runserver.py  
+  ``` 
  
 2.  Access the application on your host machine using  [http://localhost:5000](http://localhost:5000/)
 
@@ -114,13 +118,13 @@ OR ( if latest version of python has been installed ) :
 2.  Access the application on your host machine using  [http://localhost:5000](http://localhost:5000/)
 
  ### Important Note :
-1. you can change the application port (if you want ) to use these ports only : 
+*  you can change the application port (if you want ) to use these ports only : 
    ```
     Port:5000
     port:8080
     port:8000 
     ```
-    any other port will cause an invalid client error when sign in by Google 
+    any other port will cause an invalid client error when sign in by Google due to restriction of redirect urls applied by google API
 
 ## JSON Endpoints
 
@@ -134,4 +138,4 @@ OR ( if latest version of python has been installed ) :
 `/courses.JSON`
 
    - Displays specific course
- `/course/<int:category_id>.json`
+ `/course/<int:course_id>.json`
