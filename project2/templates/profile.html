@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+{% block styles %}
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="/static/css/profile.css" rel="stylesheet">
+{% endblock styles %}
+{% block content %}
+   
+      <div class="row">
+        <div class="col-lg-3 col-sm-6">
+    
+                <div class="card hovercard">
+                    <div class="cardheader">
+    
+                    </div>
+                    <div class="avatar">
+                        <img alt="" src="{{ profile_image }}">
+                    </div>
+                    <div class="info">
+                        <div class="title">
+                            <a target="_blank" href="#">{{ user.user_name }}</a>
+                        </div>
+                        <div class="desc">{{ user.email }}</div>
+                        
+                    </div>
+  
+                </div>
+    
+            </div>
+    
+      </div>
+      {% if user == current_user %}
+      <div class="row">
+        <form method="POST" action="" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Edit profile info</legend>
+                <div class="form-group">
+                    {{ form.user_name.label(class="form-control-label") }}
+
+                    {% if form.user_name.errors %}
+                        {{ form.user_name(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.user_name.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.user_name(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.email.label(class="form-control-label") }}
+                    {% if form.email.errors %}
+                        {{ form.email(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.email(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.profile_image.label() }}
+                    {{ form.profile_image(class="form-control-file") }}
+                    {% if form.profile_image.errors %}
+                        {% for error in form.profile_image.errors %}
+                            <span class="text-danger">{{ error }}</span></br>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit() }}
+            </div>
+        </form>
+    </div>
+    {% endif %}
+</div>
+{% endblock content %}

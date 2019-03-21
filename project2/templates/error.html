@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="container">
+
+        {% if error==404 %}
+        <h1>Oops. Page Not Found (404)</h1>
+        <p>That page does not exist.</p>
+        {% endif %}            
+
+        {% if  error==403 or error==401 %}
+        <h1>You don't have permission to do that (403)</h1>
+        <p>Please login or sign up and try again</p>
+        {% endif %}            
+        
+        {% if  error==500 or error==408 or error==405 or error==400 %}
+        <h1>Something went wrong (500)</h1>
+        <p>We're experiencing some trouble on our server . Please try again later</p>
+        {% endif %}
+    </div>
+    <div>
+        <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('main.home') }}">back to home page </a>
+    </div>
+{% endblock content %}
