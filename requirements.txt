@@ -22,7 +22,7 @@ MarkupSafe==1.1.1
 marshmallow==2.19.1
 marshmallow-sqlalchemy==0.16.1
 oauthlib==3.0.1
-Pillow==8.1.1
+Pillow==9.0.0
 pip==18.1
 pycparser==2.19
 requests==2.21.0
